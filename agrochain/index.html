@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agricultural Blockchain App</title>
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Agricultural Supply Chain Dapp</h1>
+  <div class="eth"><button class="enableEthereumButton btn">Enable Ethereum</button>
+    <button class="sendEthButton btn">Send Eth</button></div>
+  
+  
+    <div class="btn-group" id="form-selector" align="center">
+		
+		<button type="button" class="btn1 btn-selector active" id="sign-up-btn">Farmer</button>
+		<button type="button" class="btn1 btn-selector" id="log-in-btn" onclick="window.location.href='http://localhost:3000/quality'" >Quality Testing</button>
+		<button type="button" class="btn1 btn-selector" id="payments-btn" onclick="window.location.href='http://localhost:3000/customer'">Customer</button>
+		<button type="button" class="btn1 btn-selector" id="finance-btn" onclick="window.location.href='http://localhost:3000/finance'">Micro-Finance</button>
+    <button type="button" class="btn1 btn-selector" id="log-in-btn" onclick="window.location.href='http://localhost:3000/distributor'" >Distributor</button>
+    <button type="button" class="btn1 btn-selector" id="log-in-btn" onclick="window.location.href='http://localhost:3000/farmers'" >All Farmers</button>
+		
+	</div>
+	<div class="form" id="sign-up-form">
+		<h2 class="form-title">Enter Details</h2>
+    <form class="container" action="/" method="post">
+		<input type="text" class="input-std" id="fid" placeholder="Farmer Id" name="farmerid">
+		<input type="text" class="input-std" id="fname" placeholder="Farmers Name" name="farmername">
+		<input type="text" class="input-std" id="loc" placeholder="Location" name="location">
+		<input type="text" class="input-std" id="crop" placeholder="Crop Name" name="corpname">
+		<input type="text" class="input-std" id="contact" placeholder="Phone" name="phone">
+		<input type="text" class="input-std" id="quantity" placeholder="Quantity" name="quantity">
+		<input type="text" class="input-std" id="exprice" placeholder="Expected Price" name="rxprctedprice">
+
+		<button type="submit" class="btn-submit" >Submit Details!</button>
+  </form>
+	<span id="status"></span>
+	</div>
+	  
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+ 
+</body>
+</html>
+
+
+<script>const ethereumButton = document.querySelector('.enableEthereumButton');
+  const sendEthButton = document.querySelector('.sendEthButton');
+  
+  let accounts = [];
+  
+  //Sending Ethereum to an address
+  sendEthButton.addEventListener('click', () => {
+    ethereum
+      .request({
+        method: 'eth_sendTransaction',
+        params: [
+          {
+            from: accounts[0],
+            to: '0x2f318C334780961FB129D2a6c30D0763d9a5C970',
+            value: '0x29a2241af62c0000',
+            gasPrice: '0x09184e72a000',
+            gas: '0x2710',
+          },
+        ],
+      })
+      .then((txHash) => console.log(txHash))
+      .catch((error) => console.error);
+  });
+  
+  ethereumButton.addEventListener('click', () => {
+    getAccount();
+  });
+  
+  async function getAccount() {
+    accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  }</script>
+
+  <style>
+    .eth {
+    align-items: center;
+    justify-content: center;
+    padding-left: 600px;
+    }</style>

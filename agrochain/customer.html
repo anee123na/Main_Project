@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agricultural Blockchain App</title>
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Agricultural Supply Chain Dapp</h1>
+  
+  
+    <div class="btn-group" id="form-selector" align="center">
+		
+        <button type="button" class="btn1 btn-selector " id="sign-up-btn" onclick="window.location.href='http://localhost:3000/'">Farmer</button>
+		<button type="button" class="btn1 btn-selector " id="log-in-btn" onclick="window.location.href='http://localhost:3000/quality'" >Quality Testing</button>
+		<button type="button" class="btn1 btn-selector active" id="payments-btn" onclick="window.location.href='http://localhost:3000/customer'">Customer</button>
+		<button type="button" class="btn1 btn-selector" id="finance-btn" onclick="window.location.href='http://localhost:3000/finance'">Micro-Finance</button>
+			
+	</div>
+	<h2 class="form-title">Customer</h2>
+  <table>  
+  <input type="text" class="input-std" id="getfid" placeholder="Farmer Id">
+  <tr><td><b><label class = "black">Farmer Id</label></td><td>:</td></b><td><span class="black" span id="cgetval1"></span></td></tr>
+  <tr><td><b><label class = "black">Farmer Name</label></td><td>:</td></b><td><span class="black" span id="cgetval2"></span></td></tr>
+  <tr><td><b><label class = "black">Location</label></td><td>:</td></b><td><span class="black" span id="cgetval3"></span></td></tr>
+  <tr><td><b><label class = "black">Crop</label></td><td>:</td></b><td><span class="black" span id="cgetval4"></span></td></tr>
+  <tr><td><b><label class = "black">Phone</label></td><td>:</td></b><td><span class="black" span id="cgetval5"></span></td></tr>
+  <tr><td><b><label class = "black">Quantity</label></td><td>:</td></b><td><span class="black" span id="cgetval6"></span></td></tr>
+  <tr><td><b><label class = "black">Expected price</label><td>:</td></td></b><td><span class="black" span id="cgetval7"></span></td></tr>
+  <input type="text" class="input-std" id="lotnum" placeholder="Lot number">
+  <tr><td><b><label class = "black">Lot Number</label><td>:</td></td></b><td><span class="black" span id="cgetval8"></span></td></tr>
+  <tr><td><b><label class = "black">Grade</label><td>:</td></td></b><td><span class="black" span id="cgetval9"></span></td></tr>
+  <tr><td><b><label class = "black">MRP</label><td>:</td></td></b><td><span class="black" span id="cgetval10"></span></td></tr>
+  <tr><td><b><label class = "black">Test Date</label><td>:</td></td></b><td><span class="black" span id="cgetval11"></span></td></tr>
+  <tr><td><b><label class = "black">Expiry Date</label><td>:</td></td></b><td><span class="black" span id="cgetval12"></span></td></tr>
+  </table>
+  <button type="button" class="btn-submit" id="getcustval" onclick="getQ();cgetQ();">Get Value</button>
+  </div>
+	  
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+ 
+</body>
+</html>
+
+

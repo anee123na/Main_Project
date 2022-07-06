@@ -1,0 +1,4 @@
+Analysing.......
+prompt found Ethereum is blocked.
+Re configure port to solve the issue.
+NB: Uninstall all the services before running again
